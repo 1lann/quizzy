@@ -15,13 +15,23 @@
 		96BB93E51914DB5300C1033C /* QuizAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 96BB93E41914DB5300C1033C /* QuizAppDelegate.m */; };
 		96BB93E81914DB5300C1033C /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96BB93E61914DB5300C1033C /* Main_iPhone.storyboard */; };
 		96BB93EB1914DB5300C1033C /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96BB93E91914DB5300C1033C /* Main_iPad.storyboard */; };
-		96BB93EE1914DB5300C1033C /* QuizViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 96BB93ED1914DB5300C1033C /* QuizViewController.m */; };
+		96BB93EE1914DB5300C1033C /* MainMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 96BB93ED1914DB5300C1033C /* MainMenuViewController.m */; };
 		96BB93F01914DB5300C1033C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 96BB93EF1914DB5300C1033C /* Images.xcassets */; };
 		96BB93F71914DB5300C1033C /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96BB93F61914DB5300C1033C /* XCTest.framework */; };
 		96BB93F81914DB5300C1033C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96BB93D41914DB5300C1033C /* Foundation.framework */; };
 		96BB93F91914DB5300C1033C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96BB93D81914DB5300C1033C /* UIKit.framework */; };
 		96BB94011914DB5300C1033C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 96BB93FF1914DB5300C1033C /* InfoPlist.strings */; };
 		96BB94031914DB5300C1033C /* quizzyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 96BB94021914DB5300C1033C /* quizzyTests.m */; };
+		96BB940E19153F7300C1033C /* DemoTopic.m in Sources */ = {isa = PBXBuildFile; fileRef = 96BB940D19153F7300C1033C /* DemoTopic.m */; };
+		96BB94131915405B00C1033C /* Topic.m in Sources */ = {isa = PBXBuildFile; fileRef = 96BB94121915405B00C1033C /* Topic.m */; };
+		96BB94161915416A00C1033C /* Question.m in Sources */ = {isa = PBXBuildFile; fileRef = 96BB94151915416A00C1033C /* Question.m */; };
+		96BB941A1915424F00C1033C /* Statistic.m in Sources */ = {isa = PBXBuildFile; fileRef = 96BB94191915424F00C1033C /* Statistic.m */; };
+		96BB941E1915F6BA00C1033C /* TopicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 96BB941D1915F6BA00C1033C /* TopicViewController.m */; };
+		96BB94211915F71800C1033C /* TopicSelectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 96BB94201915F71800C1033C /* TopicSelectionViewController.m */; };
+		96BB94241915F72900C1033C /* QuestionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 96BB94231915F72900C1033C /* QuestionViewController.m */; };
+		96BB94271915F74100C1033C /* SummaryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 96BB94261915F74100C1033C /* SummaryViewController.m */; };
+		96BB942A1915F76100C1033C /* MultiplayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 96BB94291915F76100C1033C /* MultiplayerViewController.m */; };
+		96BB942D191661CE00C1033C /* TopicStatisticsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 96BB942C191661CE00C1033C /* TopicStatisticsView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,14 +57,34 @@
 		96BB93E41914DB5300C1033C /* QuizAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QuizAppDelegate.m; sourceTree = "<group>"; };
 		96BB93E71914DB5300C1033C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
 		96BB93EA1914DB5300C1033C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
-		96BB93EC1914DB5300C1033C /* QuizViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QuizViewController.h; sourceTree = "<group>"; };
-		96BB93ED1914DB5300C1033C /* QuizViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QuizViewController.m; sourceTree = "<group>"; };
+		96BB93EC1914DB5300C1033C /* MainMenuViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainMenuViewController.h; sourceTree = "<group>"; };
+		96BB93ED1914DB5300C1033C /* MainMenuViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainMenuViewController.m; sourceTree = "<group>"; };
 		96BB93EF1914DB5300C1033C /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		96BB93F51914DB5300C1033C /* quizzyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = quizzyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		96BB93F61914DB5300C1033C /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		96BB93FE1914DB5300C1033C /* quizzyTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "quizzyTests-Info.plist"; sourceTree = "<group>"; };
 		96BB94001914DB5300C1033C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		96BB94021914DB5300C1033C /* quizzyTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = quizzyTests.m; sourceTree = "<group>"; };
+		96BB940C19153F7300C1033C /* DemoTopic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemoTopic.h; sourceTree = "<group>"; };
+		96BB940D19153F7300C1033C /* DemoTopic.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DemoTopic.m; sourceTree = "<group>"; };
+		96BB94111915405B00C1033C /* Topic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Topic.h; sourceTree = "<group>"; };
+		96BB94121915405B00C1033C /* Topic.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Topic.m; sourceTree = "<group>"; };
+		96BB94141915416A00C1033C /* Question.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Question.h; sourceTree = "<group>"; };
+		96BB94151915416A00C1033C /* Question.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Question.m; sourceTree = "<group>"; };
+		96BB94181915424F00C1033C /* Statistic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Statistic.h; sourceTree = "<group>"; };
+		96BB94191915424F00C1033C /* Statistic.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Statistic.m; sourceTree = "<group>"; };
+		96BB941C1915F6BA00C1033C /* TopicViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TopicViewController.h; sourceTree = "<group>"; };
+		96BB941D1915F6BA00C1033C /* TopicViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TopicViewController.m; sourceTree = "<group>"; };
+		96BB941F1915F71800C1033C /* TopicSelectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TopicSelectionViewController.h; sourceTree = "<group>"; };
+		96BB94201915F71800C1033C /* TopicSelectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TopicSelectionViewController.m; sourceTree = "<group>"; };
+		96BB94221915F72900C1033C /* QuestionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuestionViewController.h; sourceTree = "<group>"; };
+		96BB94231915F72900C1033C /* QuestionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuestionViewController.m; sourceTree = "<group>"; };
+		96BB94251915F74100C1033C /* SummaryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SummaryViewController.h; sourceTree = "<group>"; };
+		96BB94261915F74100C1033C /* SummaryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SummaryViewController.m; sourceTree = "<group>"; };
+		96BB94281915F76100C1033C /* MultiplayerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MultiplayerViewController.h; sourceTree = "<group>"; };
+		96BB94291915F76100C1033C /* MultiplayerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MultiplayerViewController.m; sourceTree = "<group>"; };
+		96BB942B191661CE00C1033C /* TopicStatisticsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TopicStatisticsView.h; sourceTree = "<group>"; };
+		96BB942C191661CE00C1033C /* TopicStatisticsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TopicStatisticsView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,8 +148,9 @@
 				96BB93E41914DB5300C1033C /* QuizAppDelegate.m */,
 				96BB93E61914DB5300C1033C /* Main_iPhone.storyboard */,
 				96BB93E91914DB5300C1033C /* Main_iPad.storyboard */,
-				96BB93EC1914DB5300C1033C /* QuizViewController.h */,
-				96BB93ED1914DB5300C1033C /* QuizViewController.m */,
+				96BB941B1915688100C1033C /* Views */,
+				96BB94171915423A00C1033C /* Core Stuff */,
+				96BB941019153FC200C1033C /* Topics */,
 				96BB93EF1914DB5300C1033C /* Images.xcassets */,
 				96BB93DB1914DB5300C1033C /* Supporting Files */,
 			);
@@ -153,6 +184,49 @@
 				96BB93FF1914DB5300C1033C /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		96BB941019153FC200C1033C /* Topics */ = {
+			isa = PBXGroup;
+			children = (
+				96BB940C19153F7300C1033C /* DemoTopic.h */,
+				96BB940D19153F7300C1033C /* DemoTopic.m */,
+			);
+			name = Topics;
+			sourceTree = "<group>";
+		};
+		96BB94171915423A00C1033C /* Core Stuff */ = {
+			isa = PBXGroup;
+			children = (
+				96BB94111915405B00C1033C /* Topic.h */,
+				96BB94121915405B00C1033C /* Topic.m */,
+				96BB94141915416A00C1033C /* Question.h */,
+				96BB94151915416A00C1033C /* Question.m */,
+				96BB94181915424F00C1033C /* Statistic.h */,
+				96BB94191915424F00C1033C /* Statistic.m */,
+			);
+			name = "Core Stuff";
+			sourceTree = "<group>";
+		};
+		96BB941B1915688100C1033C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				96BB93EC1914DB5300C1033C /* MainMenuViewController.h */,
+				96BB93ED1914DB5300C1033C /* MainMenuViewController.m */,
+				96BB941C1915F6BA00C1033C /* TopicViewController.h */,
+				96BB941D1915F6BA00C1033C /* TopicViewController.m */,
+				96BB941F1915F71800C1033C /* TopicSelectionViewController.h */,
+				96BB94201915F71800C1033C /* TopicSelectionViewController.m */,
+				96BB94221915F72900C1033C /* QuestionViewController.h */,
+				96BB94231915F72900C1033C /* QuestionViewController.m */,
+				96BB94251915F74100C1033C /* SummaryViewController.h */,
+				96BB94261915F74100C1033C /* SummaryViewController.m */,
+				96BB94281915F76100C1033C /* MultiplayerViewController.h */,
+				96BB94291915F76100C1033C /* MultiplayerViewController.m */,
+				96BB942B191661CE00C1033C /* TopicStatisticsView.h */,
+				96BB942C191661CE00C1033C /* TopicStatisticsView.m */,
+			);
+			name = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -256,7 +330,17 @@
 			files = (
 				96BB93E11914DB5300C1033C /* main.m in Sources */,
 				96BB93E51914DB5300C1033C /* QuizAppDelegate.m in Sources */,
-				96BB93EE1914DB5300C1033C /* QuizViewController.m in Sources */,
+				96BB940E19153F7300C1033C /* DemoTopic.m in Sources */,
+				96BB942D191661CE00C1033C /* TopicStatisticsView.m in Sources */,
+				96BB941A1915424F00C1033C /* Statistic.m in Sources */,
+				96BB94161915416A00C1033C /* Question.m in Sources */,
+				96BB94131915405B00C1033C /* Topic.m in Sources */,
+				96BB94241915F72900C1033C /* QuestionViewController.m in Sources */,
+				96BB94271915F74100C1033C /* SummaryViewController.m in Sources */,
+				96BB94211915F71800C1033C /* TopicSelectionViewController.m in Sources */,
+				96BB942A1915F76100C1033C /* MultiplayerViewController.m in Sources */,
+				96BB941E1915F6BA00C1033C /* TopicViewController.m in Sources */,
+				96BB93EE1914DB5300C1033C /* MainMenuViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -475,6 +559,7 @@
 				96BB94081914DB5300C1033C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		96BB94091914DB5300C1033C /* Build configuration list for PBXNativeTarget "quizzyTests" */ = {
 			isa = XCConfigurationList;
@@ -483,6 +568,7 @@
 				96BB940B1914DB5300C1033C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

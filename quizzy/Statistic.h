@@ -1,13 +1,13 @@
 //
-//  QuizViewController.h
+//  Statistic.h
 //  quizzy
 //
 //  Created by Jason Chu on 5/3/14.
 //  Copyright (c) 2014 Jason Chu. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
 
-@interface QuizViewController : UIViewController
+@interface Statistic : NSObject
 
 @end

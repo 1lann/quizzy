@@ -6,18 +6,21 @@
 //  Copyright (c) 2014 Jason Chu. All rights reserved.
 //
 
-#import "QuizViewController.h"
+#import "MainMenuViewController.h"
+// Temporary
+#import "Topic.h"
 
-@interface QuizViewController ()
+@interface MainMenuViewController ()
 
 @end
 
-@implementation QuizViewController
+@implementation MainMenuViewController
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+	Topic* test = [[Topic alloc] initWithTopic:@"DemoTopic"];
 }
 
 - (void)didReceiveMemoryWarning
