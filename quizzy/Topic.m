@@ -20,9 +20,10 @@
 {
     self = [super init];
     if (self) {
-		self.availableTopics = @{
-		@"DemoTopic": @"Demo Topic",
-		};
+		self.availableTopics = [[NSMutableDictionary alloc] init];
+        [self.availableTopics setObject:@{@"DemoTopic": @"Demo Topic",
+                                          @"AnotherDemoTopic": @"Another Demo Topic"} forKey:@"Demo Topics"];
+        [self.availableTopics setObject:@{@"Science": @"SCIENCE!"} forKey:@"Science"];
     }
     return self;
 }

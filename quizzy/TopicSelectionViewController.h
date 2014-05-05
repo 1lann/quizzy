@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface TopicSelectionViewController : UIViewController
+@interface TopicSelectionViewController : UIViewController<UITableViewDataSource, UITableViewDelegate>
 
 @end

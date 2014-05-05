@@ -11,7 +11,7 @@
 
 @interface Topic : NSObject
 
-@property NSDictionary* availableTopics;
+@property NSMutableDictionary* availableTopics;
 @property NSString* name;
 @property NSString* description;
 - (Question*)generateQuestionWithLevel:(NSInteger)level previousQuestions:(NSArray*)previousQuestions;

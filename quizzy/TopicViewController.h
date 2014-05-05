@@ -10,5 +10,7 @@
 
 @interface TopicViewController : UIViewController
 
+@property (weak, nonatomic) IBOutlet UILabel *topicNameLabel;
+@property NSString* rawTopicName;
 
 @end
