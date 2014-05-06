@@ -10,6 +10,8 @@
 
 @interface TopicViewController ()
 
+@property Topic* topic;
+
 @end
 
 @implementation TopicViewController
@@ -27,6 +29,9 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+    self.topic = [[Topic alloc] initWithTopic:self.rawTopicName];
+    self.navigationController.topViewController.title = self.topic.name;
+    self.descriptionLabel.text = self.topic.description;
 }
 
 - (void)didReceiveMemoryWarning

@@ -169,7 +169,7 @@
     // Pass the selected object to the new view controller.
     if([[segue identifier] isEqualToString:@"selectTopic"]){
         TopicViewController* vc = [segue destinationViewController];
-        vc.topicNameLabel = self.selectedTopic;
+        vc.rawTopicName = self.selectedTopic;
     }
 }
 

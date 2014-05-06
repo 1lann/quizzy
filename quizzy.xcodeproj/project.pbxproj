@@ -30,7 +30,6 @@
 		96BB941E1915F6BA00C1033C /* TopicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 96BB941D1915F6BA00C1033C /* TopicViewController.m */; };
 		96BB94241915F72900C1033C /* QuestionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 96BB94231915F72900C1033C /* QuestionViewController.m */; };
 		96BB94271915F74100C1033C /* SummaryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 96BB94261915F74100C1033C /* SummaryViewController.m */; };
-		96BB942A1915F76100C1033C /* MultiplayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 96BB94291915F76100C1033C /* MultiplayerViewController.m */; };
 		96BB942D191661CE00C1033C /* TopicStatisticsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 96BB942C191661CE00C1033C /* TopicStatisticsView.m */; };
 /* End PBXBuildFile section */
 
@@ -81,8 +80,6 @@
 		96BB94231915F72900C1033C /* QuestionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuestionViewController.m; sourceTree = "<group>"; };
 		96BB94251915F74100C1033C /* SummaryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SummaryViewController.h; sourceTree = "<group>"; };
 		96BB94261915F74100C1033C /* SummaryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SummaryViewController.m; sourceTree = "<group>"; };
-		96BB94281915F76100C1033C /* MultiplayerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MultiplayerViewController.h; sourceTree = "<group>"; };
-		96BB94291915F76100C1033C /* MultiplayerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MultiplayerViewController.m; sourceTree = "<group>"; };
 		96BB942B191661CE00C1033C /* TopicStatisticsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TopicStatisticsView.h; sourceTree = "<group>"; };
 		96BB942C191661CE00C1033C /* TopicStatisticsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TopicStatisticsView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -221,8 +218,6 @@
 				96BB94231915F72900C1033C /* QuestionViewController.m */,
 				96BB94251915F74100C1033C /* SummaryViewController.h */,
 				96BB94261915F74100C1033C /* SummaryViewController.m */,
-				96BB94281915F76100C1033C /* MultiplayerViewController.h */,
-				96BB94291915F76100C1033C /* MultiplayerViewController.m */,
 				96BB942B191661CE00C1033C /* TopicStatisticsView.h */,
 				96BB942C191661CE00C1033C /* TopicStatisticsView.m */,
 			);
@@ -338,7 +333,6 @@
 				96BB94241915F72900C1033C /* QuestionViewController.m in Sources */,
 				96BB94271915F74100C1033C /* SummaryViewController.m in Sources */,
 				2A36885B191747B600D63C4A /* TopicSelectionTableViewController.m in Sources */,
-				96BB942A1915F76100C1033C /* MultiplayerViewController.m in Sources */,
 				96BB941E1915F6BA00C1033C /* TopicViewController.m in Sources */,
 				96BB93EE1914DB5300C1033C /* MainMenuViewController.m in Sources */,
 			);

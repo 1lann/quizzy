@@ -7,6 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
+
+// Import yo topics here
 #import "DemoTopic.h"
 
 @interface Topic : NSObject

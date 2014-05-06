@@ -7,10 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Topic.h"
 
 @interface TopicViewController : UIViewController
 
-@property (weak, nonatomic) IBOutlet UILabel *topicNameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *descriptionLabel;
 @property NSString* rawTopicName;
 
 @end
