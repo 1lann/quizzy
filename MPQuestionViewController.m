@@ -1,18 +1,18 @@
 //
-//  QuestionViewController.m
+//  MPQuestionViewController.m
 //  quizzy
 //
-//  Created by Jason Chu on 5/4/14.
+//  Created by Jason Chu on 5/7/14.
 //  Copyright (c) 2014 Jason Chu. All rights reserved.
 //
 
-#import "QuestionViewController.h"
+#import "MPQuestionViewController.h"
 
-@interface QuestionViewController ()
+@interface MPQuestionViewController ()
 
 @end
 
-@implementation QuestionViewController
+@implementation MPQuestionViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
