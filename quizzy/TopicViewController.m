@@ -7,6 +7,7 @@
 //
 
 #import "TopicViewController.h"
+#import "SPQuestionViewController.h"
 
 @interface TopicViewController ()
 
@@ -30,7 +31,7 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     self.topic = [[Topic alloc] initWithTopic:self.rawTopicName];
-    self.navigationController.topViewController.title = self.topic.name;
+    self.navigationItem.title = self.topic.name;
     self.descriptionLabel.text = self.topic.description;
 }
 
@@ -38,6 +39,13 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([[segue identifier] isEqualToString:@"gradedSinglePlayer"]) {
+        SPQuestionViewController *vc = [segue destinationViewController];
+        vc.topic = self.topic;
+    }
 }
 
 @end

@@ -7,10 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2A1E0C5A1919EF9800EA4DBC /* SPQuestionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A1E0C591919EF9800EA4DBC /* SPQuestionViewController.m */; };
-		2A1E0C5D1919EFA100EA4DBC /* MPQuestionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A1E0C5C1919EFA100EA4DBC /* MPQuestionViewController.m */; };
 		2A1E0C601919F0F300EA4DBC /* MPSelectionTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A1E0C5F1919F0F300EA4DBC /* MPSelectionTableViewController.m */; };
-		2A36885B191747B600D63C4A /* TopicSelectionTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A36885A191747B600D63C4A /* TopicSelectionTableViewController.m */; };
+		2AA460E6191A3EB4004A24A0 /* MPQuestionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AA460DF191A3EB4004A24A0 /* MPQuestionViewController.m */; };
+		2AA460E7191A3EB4004A24A0 /* MultiplayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AA460E1191A3EB4004A24A0 /* MultiplayerViewController.m */; };
+		2AA460E8191A3EB4004A24A0 /* SPQuestionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AA460E3191A3EB4004A24A0 /* SPQuestionViewController.m */; };
+		2AA460E9191A3EB4004A24A0 /* TopicSelectionTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AA460E5191A3EB4004A24A0 /* TopicSelectionTableViewController.m */; };
 		96BB93D51914DB5300C1033C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96BB93D41914DB5300C1033C /* Foundation.framework */; };
 		96BB93D71914DB5300C1033C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96BB93D61914DB5300C1033C /* CoreGraphics.framework */; };
 		96BB93D91914DB5300C1033C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96BB93D81914DB5300C1033C /* UIKit.framework */; };
@@ -46,14 +47,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		2A1E0C581919EF9800EA4DBC /* SPQuestionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SPQuestionViewController.h; path = ../SPQuestionViewController.h; sourceTree = "<group>"; };
-		2A1E0C591919EF9800EA4DBC /* SPQuestionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SPQuestionViewController.m; path = ../SPQuestionViewController.m; sourceTree = "<group>"; };
-		2A1E0C5B1919EFA100EA4DBC /* MPQuestionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MPQuestionViewController.h; path = ../MPQuestionViewController.h; sourceTree = "<group>"; };
-		2A1E0C5C1919EFA100EA4DBC /* MPQuestionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MPQuestionViewController.m; path = ../MPQuestionViewController.m; sourceTree = "<group>"; };
 		2A1E0C5E1919F0F300EA4DBC /* MPSelectionTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPSelectionTableViewController.h; sourceTree = "<group>"; };
 		2A1E0C5F1919F0F300EA4DBC /* MPSelectionTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPSelectionTableViewController.m; sourceTree = "<group>"; };
-		2A368859191747B600D63C4A /* TopicSelectionTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TopicSelectionTableViewController.h; path = ../TopicSelectionTableViewController.h; sourceTree = "<group>"; };
-		2A36885A191747B600D63C4A /* TopicSelectionTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TopicSelectionTableViewController.m; path = ../TopicSelectionTableViewController.m; sourceTree = "<group>"; };
+		2AA460DE191A3EB4004A24A0 /* MPQuestionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPQuestionViewController.h; sourceTree = "<group>"; };
+		2AA460DF191A3EB4004A24A0 /* MPQuestionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPQuestionViewController.m; sourceTree = "<group>"; };
+		2AA460E0191A3EB4004A24A0 /* MultiplayerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MultiplayerViewController.h; sourceTree = "<group>"; };
+		2AA460E1191A3EB4004A24A0 /* MultiplayerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MultiplayerViewController.m; sourceTree = "<group>"; };
+		2AA460E2191A3EB4004A24A0 /* SPQuestionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPQuestionViewController.h; sourceTree = "<group>"; };
+		2AA460E3191A3EB4004A24A0 /* SPQuestionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPQuestionViewController.m; sourceTree = "<group>"; };
+		2AA460E4191A3EB4004A24A0 /* TopicSelectionTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TopicSelectionTableViewController.h; sourceTree = "<group>"; };
+		2AA460E5191A3EB4004A24A0 /* TopicSelectionTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TopicSelectionTableViewController.m; sourceTree = "<group>"; };
 		96BB93D11914DB5300C1033C /* quizzy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = quizzy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		96BB93D41914DB5300C1033C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		96BB93D61914DB5300C1033C /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -114,6 +117,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2AA460EA191A3EDA004A24A0 /* Quiz */ = {
+			isa = PBXGroup;
+			children = (
+				2AA460DE191A3EB4004A24A0 /* MPQuestionViewController.h */,
+				2AA460DF191A3EB4004A24A0 /* MPQuestionViewController.m */,
+				2AA460E2191A3EB4004A24A0 /* SPQuestionViewController.h */,
+				2AA460E3191A3EB4004A24A0 /* SPQuestionViewController.m */,
+				2A1E0C5E1919F0F300EA4DBC /* MPSelectionTableViewController.h */,
+				2A1E0C5F1919F0F300EA4DBC /* MPSelectionTableViewController.m */,
+				96BB94251915F74100C1033C /* SummaryViewController.h */,
+				96BB94261915F74100C1033C /* SummaryViewController.m */,
+			);
+			name = Quiz;
+			sourceTree = "<group>";
+		};
 		96BB93C81914DB5200C1033C = {
 			isa = PBXGroup;
 			children = (
@@ -214,20 +232,15 @@
 		96BB941B1915688100C1033C /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				2A1E0C5B1919EFA100EA4DBC /* MPQuestionViewController.h */,
-				2A1E0C5C1919EFA100EA4DBC /* MPQuestionViewController.m */,
-				2A1E0C581919EF9800EA4DBC /* SPQuestionViewController.h */,
-				2A1E0C591919EF9800EA4DBC /* SPQuestionViewController.m */,
-				2A1E0C5E1919F0F300EA4DBC /* MPSelectionTableViewController.h */,
-				2A1E0C5F1919F0F300EA4DBC /* MPSelectionTableViewController.m */,
-				2A368859191747B600D63C4A /* TopicSelectionTableViewController.h */,
-				2A36885A191747B600D63C4A /* TopicSelectionTableViewController.m */,
+				2AA460EA191A3EDA004A24A0 /* Quiz */,
+				2AA460E0191A3EB4004A24A0 /* MultiplayerViewController.h */,
+				2AA460E1191A3EB4004A24A0 /* MultiplayerViewController.m */,
+				2AA460E4191A3EB4004A24A0 /* TopicSelectionTableViewController.h */,
+				2AA460E5191A3EB4004A24A0 /* TopicSelectionTableViewController.m */,
 				96BB93EC1914DB5300C1033C /* MainMenuViewController.h */,
 				96BB93ED1914DB5300C1033C /* MainMenuViewController.m */,
 				96BB941C1915F6BA00C1033C /* TopicViewController.h */,
 				96BB941D1915F6BA00C1033C /* TopicViewController.m */,
-				96BB94251915F74100C1033C /* SummaryViewController.h */,
-				96BB94261915F74100C1033C /* SummaryViewController.m */,
 				96BB942B191661CE00C1033C /* TopicStatisticsView.h */,
 				96BB942C191661CE00C1033C /* TopicStatisticsView.m */,
 			);
@@ -337,16 +350,17 @@
 				96BB93E51914DB5300C1033C /* QuizAppDelegate.m in Sources */,
 				2A1E0C601919F0F300EA4DBC /* MPSelectionTableViewController.m in Sources */,
 				96BB940E19153F7300C1033C /* DemoTopic.m in Sources */,
+				2AA460E9191A3EB4004A24A0 /* TopicSelectionTableViewController.m in Sources */,
 				96BB942D191661CE00C1033C /* TopicStatisticsView.m in Sources */,
 				96BB941A1915424F00C1033C /* Statistic.m in Sources */,
 				96BB94161915416A00C1033C /* Question.m in Sources */,
 				96BB94131915405B00C1033C /* Topic.m in Sources */,
-				2A1E0C5A1919EF9800EA4DBC /* SPQuestionViewController.m in Sources */,
 				96BB94271915F74100C1033C /* SummaryViewController.m in Sources */,
-				2A36885B191747B600D63C4A /* TopicSelectionTableViewController.m in Sources */,
 				96BB941E1915F6BA00C1033C /* TopicViewController.m in Sources */,
 				96BB93EE1914DB5300C1033C /* MainMenuViewController.m in Sources */,
-				2A1E0C5D1919EFA100EA4DBC /* MPQuestionViewController.m in Sources */,
+				2AA460E7191A3EB4004A24A0 /* MultiplayerViewController.m in Sources */,
+				2AA460E6191A3EB4004A24A0 /* MPQuestionViewController.m in Sources */,
+				2AA460E8191A3EB4004A24A0 /* SPQuestionViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

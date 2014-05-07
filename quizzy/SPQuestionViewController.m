@@ -10,13 +10,18 @@
 
 @interface SPQuestionViewController ()
 
+@property NSInteger questionNumber;
+@property NSInteger score;
+@property Question *currentQuestion;
+@property SEL dispQuestSel;
+
 @end
 
 @implementation SPQuestionViewController
 
-- (id)initWithStyle:(UITableViewStyle)style
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
-    self = [super initWithStyle:style];
+    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
     }
@@ -26,12 +31,13 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
- 
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+	// Do any additional setup after loading the view.
+    self.questionNumber = 0;
+    self.score = 0;
+    self.currentQuestion = [self.topic generateQuestionWithLevel:0 previousQuestions:@[]];
+    self.dispQuestSel = @selector(displayQuestion:clear:);
+    [self displayQuestion:self.currentQuestion clear:FALSE];
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -40,81 +46,131 @@
     // Dispose of any resources that can be recreated.
 }
 
-#pragma mark - Table view data source
-
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
-{
-#warning Potentially incomplete method implementation.
-    // Return the number of sections.
-    return 0;
-}
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
-#warning Incomplete method implementation.
-    // Return the number of rows in the section.
-    return 0;
-}
-
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    static NSString *CellIdentifier = @"Cell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+- (void)displayQuestion:(Question *)question clear:(BOOL)clear {
+    self.questionNumber++;
+    self.questionLabel.text = [NSString stringWithFormat:@"Question: %i", self.questionNumber];
     
-    // Configure the cell...
+    self.scoreLabel.text = [NSString stringWithFormat:@"Score: %i", self.score];
     
-    return cell;
+    if (clear) {
+        [UIView animateWithDuration:0.5 animations:^{
+            self.questionTextLabel.alpha = 0.0;
+            
+            self.optionOne.alpha = 0.0;
+            self.optionTwo.alpha = 0.0;
+            self.optionThree.alpha = 0.0;
+            self.optionFour.alpha = 0.0;
+        } completion:^(BOOL finished){
+            self.questionTextLabel.text = question.question;
+            
+            [self.optionOne setTitle:question.answers[0] forState:UIControlStateNormal];
+            [self.optionTwo setTitle:question.answers[1] forState:UIControlStateNormal];
+            [self.optionThree setTitle:question.answers[2] forState:UIControlStateNormal];
+            [self.optionFour setTitle:question.answers[3] forState:UIControlStateNormal];
+            
+            [UIView animateWithDuration:0.5 animations:^{
+                self.questionTextLabel.alpha = 1.0;
+            } completion:^(BOOL finished){
+                [UIView animateWithDuration:1.0 animations:^{
+                    
+                } completion:^(BOOL finished){
+                    [UIView animateWithDuration:0.5 animations:^{
+                        self.optionOne.alpha = 1.0;
+                        self.optionTwo.alpha = 1.0;
+                        self.optionThree.alpha = 1.0;
+                        self.optionFour.alpha = 1.0;
+                    }];
+                }];
+            }];
+        }];
+    } else {
+        self.questionTextLabel.alpha = 1.0;
+        
+        self.optionOne.alpha = 1.0;
+        self.optionTwo.alpha = 1.0;
+        self.optionThree.alpha = 1.0;
+        self.optionFour.alpha = 1.0;
+        
+        self.questionTextLabel.text = question.question;
+        
+        [self.optionOne setTitle:question.answers[0] forState:UIControlStateNormal];
+        [self.optionTwo setTitle:question.answers[1] forState:UIControlStateNormal];
+        [self.optionThree setTitle:question.answers[2] forState:UIControlStateNormal];
+        [self.optionFour setTitle:question.answers[3] forState:UIControlStateNormal];
+        NSLog(@"SET AND READY!");
+    }
 }
 
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    }   
-    else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
-{
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
-/*
-#pragma mark - Navigation
-
-// In a story board-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (IBAction)optionOnePressed:(UIButton *)sender {
+    if (self.currentQuestion.correctAnswerIndex == 0) {
+        self.score++;
+        self.optionOne.titleLabel.textColor = [UIColor colorWithRed:0.0 green:204.0/255.0 blue:0.0 alpha:1.0];
+    } else {
+        self.optionOne.titleLabel.textColor = [UIColor colorWithRed:198.0/255.0 green:56.0/255.0 blue:56.0/255.0 alpha:1.0];
+        if (self.currentQuestion.correctAnswerIndex == 1) {
+            self.optionTwo.titleLabel.textColor = [UIColor colorWithRed:0.0 green:204.0/255.0 blue:0.0 alpha:1.0];
+        } else if (self.currentQuestion.correctAnswerIndex == 2) {
+            self.optionThree.titleLabel.textColor = [UIColor colorWithRed:0.0 green:204.0/255.0 blue:0.0 alpha:1.0];
+        } else if (self.currentQuestion.correctAnswerIndex == 3) {
+            self.optionFour.titleLabel.textColor = [UIColor colorWithRed:0.0 green:204.0/255.0 blue:0.0 alpha:1.0];
+        }
+    }
+    [UIView animateWithDuration:2.0 animations:^{self.questionTextLabel.alpha = 1;} completion:^(BOOL finished) {
+        [self displayQuestion:[self.topic generateQuestionWithLevel:0 previousQuestions:@[]] clear:TRUE];
+    }];
 }
 
- */
+- (IBAction)optionTwoPressed:(UIButton *)sender {
+    if (self.currentQuestion.correctAnswerIndex == 1) {
+        self.score++;
+        self.optionTwo.titleLabel.textColor = [UIColor colorWithRed:0.0 green:204.0/255.0 blue:0.0 alpha:1.0];
+    } else {
+        self.optionTwo.titleLabel.textColor = [UIColor colorWithRed:198.0/255.0 green:56.0/255.0 blue:56.0/255.0 alpha:1.0];
+        if (self.currentQuestion.correctAnswerIndex == 0) {
+            self.optionOne.titleLabel.textColor = [UIColor colorWithRed:0.0 green:204.0/255.0 blue:0.0 alpha:1.0];
+        } else if (self.currentQuestion.correctAnswerIndex == 2) {
+            self.optionThree.titleLabel.textColor = [UIColor colorWithRed:0.0 green:204.0/255.0 blue:0.0 alpha:1.0];
+        } else if (self.currentQuestion.correctAnswerIndex == 3) {
+            self.optionFour.titleLabel.textColor = [UIColor colorWithRed:0.0 green:204.0/255.0 blue:0.0 alpha:1.0];
+        }
+    }
+    [UIView animateWithDuration:2.0 animations:^{self.questionTextLabel.alpha = 1;} completion:^(BOOL finished) {
+        [self displayQuestion:[self.topic generateQuestionWithLevel:0 previousQuestions:@[]] clear:TRUE];
+    }];
+}
 
+- (IBAction)optionThreePressed:(UIButton *)sender {
+    if (self.currentQuestion.correctAnswerIndex == 2) {
+        self.score++;
+        self.optionThree.titleLabel.textColor = [UIColor colorWithRed:0.0 green:204.0/255.0 blue:0.0 alpha:1.0];
+    } else {
+        self.optionThree.titleLabel.textColor = [UIColor colorWithRed:198.0/255.0 green:56.0/255.0 blue:56.0/255.0 alpha:1.0];
+        if (self.currentQuestion.correctAnswerIndex == 0) {
+            self.optionOne.titleLabel.textColor = [UIColor colorWithRed:0.0 green:204.0/255.0 blue:0.0 alpha:1.0];
+        } else if (self.currentQuestion.correctAnswerIndex == 1) {
+            self.optionTwo.titleLabel.textColor = [UIColor colorWithRed:0.0 green:204.0/255.0 blue:0.0 alpha:1.0];
+        } else if (self.currentQuestion.correctAnswerIndex == 3) {
+            self.optionFour.titleLabel.textColor = [UIColor colorWithRed:0.0 green:204.0/255.0 blue:0.0 alpha:1.0];
+        }
+    }
+}
+
+- (IBAction)optionFourPressed:(UIButton *)sender {
+    if (self.currentQuestion.correctAnswerIndex == 3) {
+        self.score++;
+        self.optionFour.titleLabel.textColor = [UIColor colorWithRed:0.0 green:204.0/255.0 blue:0.0 alpha:1.0];
+    } else {
+        self.optionFour.titleLabel.textColor = [UIColor colorWithRed:198.0/255.0 green:56.0/255.0 blue:56.0/255.0 alpha:1.0];
+        if (self.currentQuestion.correctAnswerIndex == 0) {
+            self.optionOne.titleLabel.textColor = [UIColor colorWithRed:0.0 green:204.0/255.0 blue:0.0 alpha:1.0];
+        } else if (self.currentQuestion.correctAnswerIndex == 1) {
+            self.optionTwo.titleLabel.textColor = [UIColor colorWithRed:0.0 green:204.0/255.0 blue:0.0 alpha:1.0];
+        } else if (self.currentQuestion.correctAnswerIndex == 2) {
+            self.optionThree.titleLabel.textColor = [UIColor colorWithRed:0.0 green:204.0/255.0 blue:0.0 alpha:1.0];
+        }
+    }
+    [UIView animateWithDuration:2.0 animations:^{self.questionTextLabel.alpha = 1;} completion:^(BOOL finished) {
+        [self displayQuestion:[self.topic generateQuestionWithLevel:0 previousQuestions:@[]] clear:TRUE];
+    }];
+}
 @end
