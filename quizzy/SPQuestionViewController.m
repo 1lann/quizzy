@@ -28,6 +28,11 @@
     return self;
 }
 
+- (void)displayClearedQuestion:(Question *)question {
+	self.currentQuestion = question;
+	[self displayQuestion:question clear:TRUE];
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -35,7 +40,7 @@
     self.questionNumber = 0;
     self.score = 0;
     self.currentQuestion = [self.topic generateQuestionWithLevel:0 previousQuestions:@[]];
-    self.dispQuestSel = @selector(displayQuestion:clear:);
+    self.dispQuestSel = @selector(displayClearedQuestion:);
     [self displayQuestion:self.currentQuestion clear:FALSE];
     
 }
@@ -47,10 +52,7 @@
 }
 
 - (void)displayQuestion:(Question *)question clear:(BOOL)clear {
-    self.questionNumber++;
-    self.questionLabel.text = [NSString stringWithFormat:@"Question: %i", self.questionNumber];
-    
-    self.scoreLabel.text = [NSString stringWithFormat:@"Score: %i", self.score];
+	NSLog(@"%i", question.correctAnswerIndex);
     
     if (clear) {
         [UIView animateWithDuration:0.5 animations:^{
@@ -61,12 +63,19 @@
             self.optionThree.alpha = 0.0;
             self.optionFour.alpha = 0.0;
         } completion:^(BOOL finished){
+			[self resetAllButtons];
+			
             self.questionTextLabel.text = question.question;
             
             [self.optionOne setTitle:question.answers[0] forState:UIControlStateNormal];
             [self.optionTwo setTitle:question.answers[1] forState:UIControlStateNormal];
             [self.optionThree setTitle:question.answers[2] forState:UIControlStateNormal];
             [self.optionFour setTitle:question.answers[3] forState:UIControlStateNormal];
+			
+			self.questionNumber++;
+			self.questionLabel.text = [NSString stringWithFormat:@"Question: %i", self.questionNumber];
+			
+			self.scoreLabel.text = [NSString stringWithFormat:@"Score: %i", self.score];
             
             [UIView animateWithDuration:0.5 animations:^{
                 self.questionTextLabel.alpha = 1.0;
@@ -84,6 +93,11 @@
             }];
         }];
     } else {
+		self.questionNumber++;
+		self.questionLabel.text = [NSString stringWithFormat:@"Question: %i", self.questionNumber];
+		
+		self.scoreLabel.text = [NSString stringWithFormat:@"Score: %i", self.score];
+		
         self.questionTextLabel.alpha = 1.0;
         
         self.optionOne.alpha = 1.0;
@@ -101,76 +115,93 @@
     }
 }
 
+- (void)disableAllButtons {
+	self.optionOne.enabled = NO;
+	self.optionTwo.enabled = NO;
+	self.optionThree.enabled = NO;
+	self.optionFour.enabled = NO;
+}
+
+- (void)resetAllButtons {
+	self.optionOne.enabled = YES;
+	self.optionTwo.enabled = YES;
+	self.optionThree.enabled = YES;
+	self.optionFour.enabled = YES;
+	[self.optionOne setTitleColor:[UIColor colorWithRed:84.0/255.0 green:144.0/255.0 blue:252.0/255.0 alpha:1.0] forState:UIControlStateDisabled];
+	[self.optionTwo setTitleColor:[UIColor colorWithRed:84.0/255.0 green:144.0/255.0 blue:252.0/255.0 alpha:1.0] forState:UIControlStateDisabled];
+	[self.optionThree setTitleColor:[UIColor colorWithRed:84.0/255.0 green:144.0/255.0 blue:252.0/255.0 alpha:1.0] forState:UIControlStateDisabled];
+	[self.optionFour setTitleColor:[UIColor colorWithRed:84.0/255.0 green:144.0/255.0 blue:252.0/255.0 alpha:1.0] forState:UIControlStateDisabled];
+}
+
 - (IBAction)optionOnePressed:(UIButton *)sender {
+	[self disableAllButtons];
     if (self.currentQuestion.correctAnswerIndex == 0) {
         self.score++;
-        self.optionOne.titleLabel.textColor = [UIColor colorWithRed:0.0 green:204.0/255.0 blue:0.0 alpha:1.0];
+		[self.optionOne  setTitleColor:[UIColor colorWithRed:0.0 green:204.0/255.0 blue:0.0 alpha:1.0] forState:UIControlStateDisabled];
     } else {
-        self.optionOne.titleLabel.textColor = [UIColor colorWithRed:198.0/255.0 green:56.0/255.0 blue:56.0/255.0 alpha:1.0];
+		[self.optionOne  setTitleColor:[UIColor colorWithRed:198.0/255.0 green:56.0/255.0 blue:56.0/255.0 alpha:1.0] forState:UIControlStateDisabled];
         if (self.currentQuestion.correctAnswerIndex == 1) {
-            self.optionTwo.titleLabel.textColor = [UIColor colorWithRed:0.0 green:204.0/255.0 blue:0.0 alpha:1.0];
+            [self.optionTwo setTitleColor:[UIColor colorWithRed:0.0 green:204.0/255.0 blue:0.0 alpha:1.0] forState:UIControlStateDisabled];
         } else if (self.currentQuestion.correctAnswerIndex == 2) {
-            self.optionThree.titleLabel.textColor = [UIColor colorWithRed:0.0 green:204.0/255.0 blue:0.0 alpha:1.0];
+            [self.optionThree setTitleColor:[UIColor colorWithRed:0.0 green:204.0/255.0 blue:0.0 alpha:1.0] forState:UIControlStateDisabled];
         } else if (self.currentQuestion.correctAnswerIndex == 3) {
-            self.optionFour.titleLabel.textColor = [UIColor colorWithRed:0.0 green:204.0/255.0 blue:0.0 alpha:1.0];
+            [self.optionFour setTitleColor:[UIColor colorWithRed:0.0 green:204.0/255.0 blue:0.0 alpha:1.0] forState:UIControlStateDisabled];
         }
     }
-    [UIView animateWithDuration:2.0 animations:^{self.questionTextLabel.alpha = 1;} completion:^(BOOL finished) {
-        [self displayQuestion:[self.topic generateQuestionWithLevel:0 previousQuestions:@[]] clear:TRUE];
-    }];
+	[self performSelector:self.dispQuestSel withObject:[self.topic generateQuestionWithLevel:0 previousQuestions:@[]] afterDelay:1.0];
 }
 
 - (IBAction)optionTwoPressed:(UIButton *)sender {
+	[self disableAllButtons];
     if (self.currentQuestion.correctAnswerIndex == 1) {
         self.score++;
-        self.optionTwo.titleLabel.textColor = [UIColor colorWithRed:0.0 green:204.0/255.0 blue:0.0 alpha:1.0];
+        [self.optionTwo  setTitleColor:[UIColor colorWithRed:0.0 green:204.0/255.0 blue:0.0 alpha:1.0] forState:UIControlStateDisabled];
     } else {
-        self.optionTwo.titleLabel.textColor = [UIColor colorWithRed:198.0/255.0 green:56.0/255.0 blue:56.0/255.0 alpha:1.0];
+        [self.optionTwo setTitleColor:[UIColor colorWithRed:198.0/255.0 green:56.0/255.0 blue:56.0/255.0 alpha:1.0] forState:UIControlStateDisabled];
         if (self.currentQuestion.correctAnswerIndex == 0) {
-            self.optionOne.titleLabel.textColor = [UIColor colorWithRed:0.0 green:204.0/255.0 blue:0.0 alpha:1.0];
+            [self.optionOne setTitleColor:[UIColor colorWithRed:0.0 green:204.0/255.0 blue:0.0 alpha:1.0] forState:UIControlStateDisabled];
         } else if (self.currentQuestion.correctAnswerIndex == 2) {
-            self.optionThree.titleLabel.textColor = [UIColor colorWithRed:0.0 green:204.0/255.0 blue:0.0 alpha:1.0];
+            [self.optionThree setTitleColor:[UIColor colorWithRed:0.0 green:204.0/255.0 blue:0.0 alpha:1.0] forState:UIControlStateDisabled];
         } else if (self.currentQuestion.correctAnswerIndex == 3) {
-            self.optionFour.titleLabel.textColor = [UIColor colorWithRed:0.0 green:204.0/255.0 blue:0.0 alpha:1.0];
+            [self.optionFour setTitleColor:[UIColor colorWithRed:0.0 green:204.0/255.0 blue:0.0 alpha:1.0] forState:UIControlStateDisabled];
         }
     }
-    [UIView animateWithDuration:2.0 animations:^{self.questionTextLabel.alpha = 1;} completion:^(BOOL finished) {
-        [self displayQuestion:[self.topic generateQuestionWithLevel:0 previousQuestions:@[]] clear:TRUE];
-    }];
+    [self performSelector:self.dispQuestSel withObject:[self.topic generateQuestionWithLevel:0 previousQuestions:@[]] afterDelay:1.0];
 }
 
 - (IBAction)optionThreePressed:(UIButton *)sender {
+	[self disableAllButtons];
     if (self.currentQuestion.correctAnswerIndex == 2) {
         self.score++;
-        self.optionThree.titleLabel.textColor = [UIColor colorWithRed:0.0 green:204.0/255.0 blue:0.0 alpha:1.0];
+        [self.optionThree setTitleColor:[UIColor colorWithRed:0.0 green:204.0/255.0 blue:0.0 alpha:1.0] forState:UIControlStateDisabled];
     } else {
-        self.optionThree.titleLabel.textColor = [UIColor colorWithRed:198.0/255.0 green:56.0/255.0 blue:56.0/255.0 alpha:1.0];
+        [self.optionThree setTitleColor:[UIColor colorWithRed:198.0/255.0 green:56.0/255.0 blue:56.0/255.0 alpha:1.0] forState:UIControlStateDisabled];
         if (self.currentQuestion.correctAnswerIndex == 0) {
-            self.optionOne.titleLabel.textColor = [UIColor colorWithRed:0.0 green:204.0/255.0 blue:0.0 alpha:1.0];
+            [self.optionOne setTitleColor:[UIColor colorWithRed:0.0 green:204.0/255.0 blue:0.0 alpha:1.0] forState:UIControlStateDisabled];
         } else if (self.currentQuestion.correctAnswerIndex == 1) {
-            self.optionTwo.titleLabel.textColor = [UIColor colorWithRed:0.0 green:204.0/255.0 blue:0.0 alpha:1.0];
+            [self.optionTwo setTitleColor:[UIColor colorWithRed:0.0 green:204.0/255.0 blue:0.0 alpha:1.0] forState:UIControlStateDisabled];
         } else if (self.currentQuestion.correctAnswerIndex == 3) {
-            self.optionFour.titleLabel.textColor = [UIColor colorWithRed:0.0 green:204.0/255.0 blue:0.0 alpha:1.0];
+            [self.optionFour setTitleColor:[UIColor colorWithRed:0.0 green:204.0/255.0 blue:0.0 alpha:1.0] forState:UIControlStateDisabled];
         }
     }
+	[self performSelector:self.dispQuestSel withObject:[self.topic generateQuestionWithLevel:0 previousQuestions:@[]] afterDelay:1.0];
 }
 
 - (IBAction)optionFourPressed:(UIButton *)sender {
+	[self disableAllButtons];
     if (self.currentQuestion.correctAnswerIndex == 3) {
         self.score++;
-        self.optionFour.titleLabel.textColor = [UIColor colorWithRed:0.0 green:204.0/255.0 blue:0.0 alpha:1.0];
+        [self.optionFour setTitleColor:[UIColor colorWithRed:0.0 green:204.0/255.0 blue:0.0 alpha:1.0] forState:UIControlStateDisabled];
     } else {
-        self.optionFour.titleLabel.textColor = [UIColor colorWithRed:198.0/255.0 green:56.0/255.0 blue:56.0/255.0 alpha:1.0];
+        [self.optionFour setTitleColor:[UIColor colorWithRed:198.0/255.0 green:56.0/255.0 blue:56.0/255.0 alpha:1.0] forState:UIControlStateDisabled];
         if (self.currentQuestion.correctAnswerIndex == 0) {
-            self.optionOne.titleLabel.textColor = [UIColor colorWithRed:0.0 green:204.0/255.0 blue:0.0 alpha:1.0];
+            [self.optionOne setTitleColor:[UIColor colorWithRed:0.0 green:204.0/255.0 blue:0.0 alpha:1.0] forState:UIControlStateDisabled];
         } else if (self.currentQuestion.correctAnswerIndex == 1) {
-            self.optionTwo.titleLabel.textColor = [UIColor colorWithRed:0.0 green:204.0/255.0 blue:0.0 alpha:1.0];
+            [self.optionTwo setTitleColor:[UIColor colorWithRed:0.0 green:204.0/255.0 blue:0.0 alpha:1.0] forState:UIControlStateDisabled];
         } else if (self.currentQuestion.correctAnswerIndex == 2) {
-            self.optionThree.titleLabel.textColor = [UIColor colorWithRed:0.0 green:204.0/255.0 blue:0.0 alpha:1.0];
+            [self.optionThree setTitleColor:[UIColor colorWithRed:0.0 green:204.0/255.0 blue:0.0 alpha:1.0] forState:UIControlStateDisabled];
         }
     }
-    [UIView animateWithDuration:2.0 animations:^{self.questionTextLabel.alpha = 1;} completion:^(BOOL finished) {
-        [self displayQuestion:[self.topic generateQuestionWithLevel:0 previousQuestions:@[]] clear:TRUE];
-    }];
+	[self performSelector:self.dispQuestSel withObject:[self.topic generateQuestionWithLevel:0 previousQuestions:@[]] afterDelay:1.0];
 }
 @end
