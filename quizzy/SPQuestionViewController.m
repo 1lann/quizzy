@@ -28,11 +28,6 @@
     return self;
 }
 
-- (void)displayClearedQuestion:(Question *)question {
-	self.currentQuestion = question;
-	[self displayQuestion:question clear:TRUE];
-}
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -43,6 +38,11 @@
     self.dispQuestSel = @selector(displayClearedQuestion:);
     [self displayQuestion:self.currentQuestion clear:FALSE];
     
+}
+
+- (void)displayClearedQuestion:(Question *)question {
+	self.currentQuestion = question;
+	[self displayQuestion:question clear:TRUE];
 }
 
 - (void)didReceiveMemoryWarning
@@ -127,10 +127,10 @@
 	self.optionTwo.enabled = YES;
 	self.optionThree.enabled = YES;
 	self.optionFour.enabled = YES;
-	[self.optionOne setTitleColor:[UIColor colorWithRed:84.0/255.0 green:144.0/255.0 blue:252.0/255.0 alpha:1.0] forState:UIControlStateDisabled];
-	[self.optionTwo setTitleColor:[UIColor colorWithRed:84.0/255.0 green:144.0/255.0 blue:252.0/255.0 alpha:1.0] forState:UIControlStateDisabled];
-	[self.optionThree setTitleColor:[UIColor colorWithRed:84.0/255.0 green:144.0/255.0 blue:252.0/255.0 alpha:1.0] forState:UIControlStateDisabled];
-	[self.optionFour setTitleColor:[UIColor colorWithRed:84.0/255.0 green:144.0/255.0 blue:252.0/255.0 alpha:1.0] forState:UIControlStateDisabled];
+	[self.optionOne setTitleColor:[UIColor colorWithRed:184.0/255.0 green:184.0/255.0 blue:184.0/255.0 alpha:1.0] forState:UIControlStateDisabled];
+	[self.optionTwo setTitleColor:[UIColor colorWithRed:184.0/255.0 green:184.0/255.0 blue:184.0/255.0 alpha:1.0] forState:UIControlStateDisabled];
+	[self.optionThree setTitleColor:[UIColor colorWithRed:184.0/255.0 green:184.0/255.0 blue:184.0/255.0 alpha:1.0] forState:UIControlStateDisabled];
+	[self.optionFour setTitleColor:[UIColor colorWithRed:184.0/255.0 green:184.0/255.0 blue:184.0/255.0 alpha:1.0] forState:UIControlStateDisabled];
 }
 
 - (IBAction)optionOnePressed:(UIButton *)sender {
@@ -148,6 +148,7 @@
             [self.optionFour setTitleColor:[UIColor colorWithRed:0.0 green:204.0/255.0 blue:0.0 alpha:1.0] forState:UIControlStateDisabled];
         }
     }
+    self.scoreLabel.text = [NSString stringWithFormat:@"Score: %i", self.score];
 	[self performSelector:self.dispQuestSel withObject:[self.topic generateQuestionWithLevel:0 previousQuestions:@[]] afterDelay:1.0];
 }
 
@@ -166,6 +167,7 @@
             [self.optionFour setTitleColor:[UIColor colorWithRed:0.0 green:204.0/255.0 blue:0.0 alpha:1.0] forState:UIControlStateDisabled];
         }
     }
+    self.scoreLabel.text = [NSString stringWithFormat:@"Score: %i", self.score];
     [self performSelector:self.dispQuestSel withObject:[self.topic generateQuestionWithLevel:0 previousQuestions:@[]] afterDelay:1.0];
 }
 
@@ -184,6 +186,7 @@
             [self.optionFour setTitleColor:[UIColor colorWithRed:0.0 green:204.0/255.0 blue:0.0 alpha:1.0] forState:UIControlStateDisabled];
         }
     }
+    self.scoreLabel.text = [NSString stringWithFormat:@"Score: %i", self.score];
 	[self performSelector:self.dispQuestSel withObject:[self.topic generateQuestionWithLevel:0 previousQuestions:@[]] afterDelay:1.0];
 }
 
@@ -202,6 +205,7 @@
             [self.optionThree setTitleColor:[UIColor colorWithRed:0.0 green:204.0/255.0 blue:0.0 alpha:1.0] forState:UIControlStateDisabled];
         }
     }
+    self.scoreLabel.text = [NSString stringWithFormat:@"Score: %i", self.score];
 	[self performSelector:self.dispQuestSel withObject:[self.topic generateQuestionWithLevel:0 previousQuestions:@[]] afterDelay:1.0];
 }
 @end
