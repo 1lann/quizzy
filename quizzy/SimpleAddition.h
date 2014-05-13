@@ -1,23 +1,18 @@
 //
-//  Topic.h
+//  DoubleDigitsAddition.h
 //  quizzy
 //
-//  Created by Jason Chu on 5/3/14.
+//  Created by Jason Chu on 5/13/14.
 //  Copyright (c) 2014 Jason Chu. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
+#import "Question.h"
 
-// Import yo topics here
-#import "DemoTopic.h"
-#import "SimpleAddition.h"
+@interface SimpleAddition : NSObject
 
-@interface Topic : NSObject
-
-@property NSMutableDictionary* availableTopics;
 @property NSString* name;
 @property NSString* description;
 - (Question*)generateQuestionWithLevel:(NSInteger)level previousQuestions:(NSArray*)previousQuestions;
-- (id)initWithTopic:(NSString*)topic;
 
 @end

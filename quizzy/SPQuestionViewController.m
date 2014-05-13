@@ -52,8 +52,6 @@
 }
 
 - (void)displayQuestion:(Question *)question clear:(BOOL)clear {
-	NSLog(@"%i", question.correctAnswerIndex);
-    
     if (clear) {
         [UIView animateWithDuration:0.5 animations:^{
             self.questionTextLabel.alpha = 0.0;
@@ -111,7 +109,6 @@
         [self.optionTwo setTitle:question.answers[1] forState:UIControlStateNormal];
         [self.optionThree setTitle:question.answers[2] forState:UIControlStateNormal];
         [self.optionFour setTitle:question.answers[3] forState:UIControlStateNormal];
-        NSLog(@"SET AND READY!");
     }
 }
 

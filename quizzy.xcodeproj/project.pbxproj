@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2A1E0C601919F0F300EA4DBC /* MPSelectionTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A1E0C5F1919F0F300EA4DBC /* MPSelectionTableViewController.m */; };
+		2A66D2F01921A43B00920F77 /* SimpleAddition.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A66D2EF1921A43B00920F77 /* SimpleAddition.m */; };
 		2AA460E6191A3EB4004A24A0 /* MPQuestionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AA460DF191A3EB4004A24A0 /* MPQuestionViewController.m */; };
 		2AA460E7191A3EB4004A24A0 /* MultiplayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AA460E1191A3EB4004A24A0 /* MultiplayerViewController.m */; };
 		2AA460E8191A3EB4004A24A0 /* SPQuestionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AA460E3191A3EB4004A24A0 /* SPQuestionViewController.m */; };
@@ -49,6 +50,8 @@
 /* Begin PBXFileReference section */
 		2A1E0C5E1919F0F300EA4DBC /* MPSelectionTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPSelectionTableViewController.h; sourceTree = "<group>"; };
 		2A1E0C5F1919F0F300EA4DBC /* MPSelectionTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPSelectionTableViewController.m; sourceTree = "<group>"; };
+		2A66D2EE1921A43B00920F77 /* SimpleAddition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SimpleAddition.h; sourceTree = "<group>"; };
+		2A66D2EF1921A43B00920F77 /* SimpleAddition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SimpleAddition.m; sourceTree = "<group>"; };
 		2AA460DE191A3EB4004A24A0 /* MPQuestionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPQuestionViewController.h; sourceTree = "<group>"; };
 		2AA460DF191A3EB4004A24A0 /* MPQuestionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPQuestionViewController.m; sourceTree = "<group>"; };
 		2AA460E0191A3EB4004A24A0 /* MultiplayerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MultiplayerViewController.h; sourceTree = "<group>"; };
@@ -212,6 +215,8 @@
 			children = (
 				96BB940C19153F7300C1033C /* DemoTopic.h */,
 				96BB940D19153F7300C1033C /* DemoTopic.m */,
+				2A66D2EE1921A43B00920F77 /* SimpleAddition.h */,
+				2A66D2EF1921A43B00920F77 /* SimpleAddition.m */,
 			);
 			name = Topics;
 			sourceTree = "<group>";
@@ -358,6 +363,7 @@
 				96BB94271915F74100C1033C /* SummaryViewController.m in Sources */,
 				96BB941E1915F6BA00C1033C /* TopicViewController.m in Sources */,
 				96BB93EE1914DB5300C1033C /* MainMenuViewController.m in Sources */,
+				2A66D2F01921A43B00920F77 /* SimpleAddition.m in Sources */,
 				2AA460E7191A3EB4004A24A0 /* MultiplayerViewController.m in Sources */,
 				2AA460E6191A3EB4004A24A0 /* MPQuestionViewController.m in Sources */,
 				2AA460E8191A3EB4004A24A0 /* SPQuestionViewController.m in Sources */,
