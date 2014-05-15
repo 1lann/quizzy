@@ -38,7 +38,8 @@
             int randomNumber = 0;
             while (YES) {
                 randomNumber = (arc4random() % 100);
-                if (![answers containsObject:[NSString stringWithFormat:@"%i", randomNumber]] && randomNumber != answer && randomNumber > firstNumber && randomNumber > secondNumber) {
+                if (![answers containsObject:[NSString stringWithFormat:@"%i", randomNumber]] && randomNumber != answer && randomNumber
+                    > firstNumber && randomNumber > secondNumber) {
                     break;
                 }
             }

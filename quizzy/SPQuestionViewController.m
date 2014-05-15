@@ -109,6 +109,7 @@
         [self.optionTwo setTitle:question.answers[1] forState:UIControlStateNormal];
         [self.optionThree setTitle:question.answers[2] forState:UIControlStateNormal];
         [self.optionFour setTitle:question.answers[3] forState:UIControlStateNormal];
+        
     }
 }
 

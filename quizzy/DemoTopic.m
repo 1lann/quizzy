@@ -34,6 +34,7 @@
 			[answers addObject:[NSString stringWithFormat:@"%i", answer]];
 		} else {
             int randomNumber = 0;
+            
             while (YES) {
                 randomNumber = (arc4random() % 10);
                 if (![answers containsObject:[NSString stringWithFormat:@"%i", randomNumber]] && randomNumber != answer) {
