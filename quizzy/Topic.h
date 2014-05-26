@@ -11,6 +11,7 @@
 // Import yo topics here
 #import "DemoTopic.h"
 #import "SimpleAddition.h"
+#import "SolvingExpressions.h"
 
 @interface Topic : NSObject
 

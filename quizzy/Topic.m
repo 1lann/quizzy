@@ -23,7 +23,8 @@
 		self.availableTopics = [[NSMutableDictionary alloc] init];
         [self.availableTopics setObject:@{@"DemoTopic": @"Demo Topic",
                                           @"AnotherDemoTopic": @"Another Demo Topic"} forKey:@"Demo Topics"];
-        [self.availableTopics setObject:@{@"SimpleAddition": @"Simple Addition"} forKey:@"Mathematics"];
+        [self.availableTopics setObject:@{@"SimpleAddition": @"Simple Addition",
+                                          @"SolvingExpressions": @"Solving Expressions"} forKey:@"Mathematics"];
         [self.availableTopics setObject:@{@"Science": @"SCIENCE!"} forKey:@"Science"];
     }
     return self;
@@ -59,6 +60,8 @@
 		self.topic = [[DemoTopic alloc] init];
 	} else if ([topicName isEqualToString:@"SimpleAddition"]) {
         self.topic = [[SimpleAddition alloc] init];
+    } else if ([topicName isEqualToString:@"SolvingExpressions"]) {
+        self.topic = [[SolvingExpressions alloc] init];
     }
     
     return self.topic;

@@ -13,6 +13,7 @@
 		2AA460E7191A3EB4004A24A0 /* MultiplayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AA460E1191A3EB4004A24A0 /* MultiplayerViewController.m */; };
 		2AA460E8191A3EB4004A24A0 /* SPQuestionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AA460E3191A3EB4004A24A0 /* SPQuestionViewController.m */; };
 		2AA460E9191A3EB4004A24A0 /* TopicSelectionTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AA460E5191A3EB4004A24A0 /* TopicSelectionTableViewController.m */; };
+		2AC07CCA1932FB1A00D6BC17 /* SolvingExpressions.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AC07CC91932FB1A00D6BC17 /* SolvingExpressions.m */; };
 		96BB93D51914DB5300C1033C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96BB93D41914DB5300C1033C /* Foundation.framework */; };
 		96BB93D71914DB5300C1033C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96BB93D61914DB5300C1033C /* CoreGraphics.framework */; };
 		96BB93D91914DB5300C1033C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96BB93D81914DB5300C1033C /* UIKit.framework */; };
@@ -60,6 +61,8 @@
 		2AA460E3191A3EB4004A24A0 /* SPQuestionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPQuestionViewController.m; sourceTree = "<group>"; };
 		2AA460E4191A3EB4004A24A0 /* TopicSelectionTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TopicSelectionTableViewController.h; sourceTree = "<group>"; };
 		2AA460E5191A3EB4004A24A0 /* TopicSelectionTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TopicSelectionTableViewController.m; sourceTree = "<group>"; };
+		2AC07CC81932FB1A00D6BC17 /* SolvingExpressions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SolvingExpressions.h; sourceTree = "<group>"; };
+		2AC07CC91932FB1A00D6BC17 /* SolvingExpressions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SolvingExpressions.m; sourceTree = "<group>"; };
 		96BB93D11914DB5300C1033C /* quizzy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = quizzy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		96BB93D41914DB5300C1033C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		96BB93D61914DB5300C1033C /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -213,6 +216,8 @@
 		96BB941019153FC200C1033C /* Topics */ = {
 			isa = PBXGroup;
 			children = (
+				2AC07CC81932FB1A00D6BC17 /* SolvingExpressions.h */,
+				2AC07CC91932FB1A00D6BC17 /* SolvingExpressions.m */,
 				96BB940C19153F7300C1033C /* DemoTopic.h */,
 				96BB940D19153F7300C1033C /* DemoTopic.m */,
 				2A66D2EE1921A43B00920F77 /* SimpleAddition.h */,
@@ -360,6 +365,7 @@
 				96BB941A1915424F00C1033C /* Statistic.m in Sources */,
 				96BB94161915416A00C1033C /* Question.m in Sources */,
 				96BB94131915405B00C1033C /* Topic.m in Sources */,
+				2AC07CCA1932FB1A00D6BC17 /* SolvingExpressions.m in Sources */,
 				96BB94271915F74100C1033C /* SummaryViewController.m in Sources */,
 				96BB941E1915F6BA00C1033C /* TopicViewController.m in Sources */,
 				96BB93EE1914DB5300C1033C /* MainMenuViewController.m in Sources */,
