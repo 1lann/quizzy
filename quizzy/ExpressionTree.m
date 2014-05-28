@@ -25,8 +25,6 @@
         return self.value;
     } else if (self.expressionType == Multiply) {
         return [self.leftExpression calculateTotal] * [self.rightExpression calculateTotal];
-    } else if (self.expressionType == Divide) {
-        return [self.leftExpression calculateTotal] / [self.rightExpression calculateTotal];
     } else if (self.expressionType == Add) {
         return [self.leftExpression calculateTotal] + [self.rightExpression calculateTotal];
     } else if (self.expressionType == Subtract) {

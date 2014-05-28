@@ -26,6 +26,9 @@
 @property (weak, nonatomic) IBOutlet UIButton *optionThree;
 @property (weak, nonatomic) IBOutlet UIButton *optionFour;
 
+@property NSInteger totalScore;
+@property NSInteger totalTime;
+
 - (IBAction)optionOnePressed:(UIButton *)sender;
 - (IBAction)optionTwoPressed:(UIButton *)sender;
 - (IBAction)optionThreePressed:(UIButton *)sender;

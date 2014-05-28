@@ -32,6 +32,10 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+    #warning Change later
+    self.totalScore = 10;
+    self.progressProgressView.progress = 0;
+    
     self.questionNumber = 0;
     self.score = 0;
     self.currentQuestion = [self.topic generateQuestionWithLevel:0 previousQuestions:@[]];
@@ -113,6 +117,15 @@
     }
 }
 
+- (void)progressProgress:(BOOL)correct {
+    if (correct) {
+        self.score++;
+    }
+    self.scoreLabel.text = [NSString stringWithFormat:@"Score: %i", self.score];
+    self.progressProgressView.progress = (float)self.questionNumber/(float)self.totalScore;
+    [self performSelector:self.dispQuestSel withObject:[self.topic generateQuestionWithLevel:0 previousQuestions:@[]] afterDelay:1.0];
+}
+
 - (void)disableAllButtons {
 	self.optionOne.enabled = NO;
 	self.optionTwo.enabled = NO;
@@ -134,7 +147,6 @@
 - (IBAction)optionOnePressed:(UIButton *)sender {
 	[self disableAllButtons];
     if (self.currentQuestion.correctAnswerIndex == 0) {
-        self.score++;
 		[self.optionOne  setTitleColor:[UIColor colorWithRed:0.0 green:204.0/255.0 blue:0.0 alpha:1.0] forState:UIControlStateDisabled];
     } else {
 		[self.optionOne  setTitleColor:[UIColor colorWithRed:198.0/255.0 green:56.0/255.0 blue:56.0/255.0 alpha:1.0] forState:UIControlStateDisabled];
@@ -146,14 +158,12 @@
             [self.optionFour setTitleColor:[UIColor colorWithRed:0.0 green:204.0/255.0 blue:0.0 alpha:1.0] forState:UIControlStateDisabled];
         }
     }
-    self.scoreLabel.text = [NSString stringWithFormat:@"Score: %i", self.score];
-	[self performSelector:self.dispQuestSel withObject:[self.topic generateQuestionWithLevel:0 previousQuestions:@[]] afterDelay:1.0];
+	[self progressProgress:(self.currentQuestion.correctAnswerIndex == 0)];
 }
 
 - (IBAction)optionTwoPressed:(UIButton *)sender {
 	[self disableAllButtons];
     if (self.currentQuestion.correctAnswerIndex == 1) {
-        self.score++;
         [self.optionTwo  setTitleColor:[UIColor colorWithRed:0.0 green:204.0/255.0 blue:0.0 alpha:1.0] forState:UIControlStateDisabled];
     } else {
         [self.optionTwo setTitleColor:[UIColor colorWithRed:198.0/255.0 green:56.0/255.0 blue:56.0/255.0 alpha:1.0] forState:UIControlStateDisabled];
@@ -165,8 +175,7 @@
             [self.optionFour setTitleColor:[UIColor colorWithRed:0.0 green:204.0/255.0 blue:0.0 alpha:1.0] forState:UIControlStateDisabled];
         }
     }
-    self.scoreLabel.text = [NSString stringWithFormat:@"Score: %i", self.score];
-    [self performSelector:self.dispQuestSel withObject:[self.topic generateQuestionWithLevel:0 previousQuestions:@[]] afterDelay:1.0];
+    [self progressProgress:(self.currentQuestion.correctAnswerIndex == 1)];
 }
 
 - (IBAction)optionThreePressed:(UIButton *)sender {
@@ -184,14 +193,12 @@
             [self.optionFour setTitleColor:[UIColor colorWithRed:0.0 green:204.0/255.0 blue:0.0 alpha:1.0] forState:UIControlStateDisabled];
         }
     }
-    self.scoreLabel.text = [NSString stringWithFormat:@"Score: %i", self.score];
-	[self performSelector:self.dispQuestSel withObject:[self.topic generateQuestionWithLevel:0 previousQuestions:@[]] afterDelay:1.0];
+    [self progressProgress:(self.currentQuestion.correctAnswerIndex == 2)];
 }
 
 - (IBAction)optionFourPressed:(UIButton *)sender {
 	[self disableAllButtons];
     if (self.currentQuestion.correctAnswerIndex == 3) {
-        self.score++;
         [self.optionFour setTitleColor:[UIColor colorWithRed:0.0 green:204.0/255.0 blue:0.0 alpha:1.0] forState:UIControlStateDisabled];
     } else {
         [self.optionFour setTitleColor:[UIColor colorWithRed:198.0/255.0 green:56.0/255.0 blue:56.0/255.0 alpha:1.0] forState:UIControlStateDisabled];
@@ -203,7 +210,6 @@
             [self.optionThree setTitleColor:[UIColor colorWithRed:0.0 green:204.0/255.0 blue:0.0 alpha:1.0] forState:UIControlStateDisabled];
         }
     }
-    self.scoreLabel.text = [NSString stringWithFormat:@"Score: %i", self.score];
-	[self performSelector:self.dispQuestSel withObject:[self.topic generateQuestionWithLevel:0 previousQuestions:@[]] afterDelay:1.0];
+    [self progressProgress:(self.currentQuestion.correctAnswerIndex == 3)];
 }
 @end

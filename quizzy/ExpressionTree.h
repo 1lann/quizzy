@@ -17,7 +17,6 @@ typedef NS_ENUM(NSInteger, ExpressionType) {
     Multiply,
     Add,
     Subtract,
-    Divide,
     Number
 };
 
